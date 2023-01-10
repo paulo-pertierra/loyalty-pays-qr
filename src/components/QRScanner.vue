@@ -12,8 +12,7 @@ export default {
     methods: {
         onDecode(text) {
             console.log(`Decode text from QR code is ${text}`)
-            // window.location.href=`${text}`
-            this.isShown = true;
+            window.location.href=`${text}`
         },
         onLoaded() {
             console.log(`Ready to start scanning barcodes`)
@@ -23,5 +22,4 @@ export default {
 </script>
 <template>
     <StreamBarcodeReader @decode="onDecode" @loaded="onLoaded"></StreamBarcodeReader>
-    <div v-show="isShown" v-for="data in arr">{{ data }}</div>
 </template>
